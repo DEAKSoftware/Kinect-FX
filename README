@@ -3,7 +3,16 @@
 ---------------------------------------
 
 
-1. Structure
+1. Introduction
+
+Kinect FX (KFX) is simple project designed to tap into the Kinect hardware
+via the Freenect API and apply some funky post processing filters on the raw
+video stream. The post processing is done entirely on hardware through OpenGL
+shaders. The project was successfuly built on Windows XP and MacOS. I could
+build KFX on Linux inside a VM but I have not tested it.
+
+
+2. Structure
 
 The K-FX project is based on the Qt SDK, a cross platform API. The source 
 code package is organised in the following way:
@@ -21,12 +30,12 @@ code package is organised in the following way:
    kfx.windows.pri         Windows project include for qmake
 
 
-2. Documentation
+3. Documentation
 
 Please read doc/readme.txt for build instructions.
 
 
-3. License
+4. License
 
 Please read doc/license-kfx.txt for LGPL 2.1 terms and conditions.
 
