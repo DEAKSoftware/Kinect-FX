@@ -7,6 +7,5 @@ windows/ipch/
 windows/*.tws
 windows/*.sdf
 windows/*.suo
-kfx*.dmg
-kfx*.rar
+kfx-source*.rar
 .ds_store

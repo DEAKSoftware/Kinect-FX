@@ -28,6 +28,14 @@ The source code package is organised in the following way:
    kfx.pro                 Main project file for qmake
    kfx.windows.pri         Windows project include for qmake
 
+For your convenience, compiled versions of the project is also included in 
+this repo:
+
+   kfx-macosx-YYYY-MM-DD.dmg
+   kfx-windows-YYYY-MM-DD.rar
+
+The YYYY-MM-DD fields denote the build date.
+
 
 3. Documentation
 
