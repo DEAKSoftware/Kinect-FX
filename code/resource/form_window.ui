@@ -1,0 +1,2161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WindowMain</class>
+ <widget class="QMainWindow" name="WindowMain">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>660</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1024</width>
+    <height>660</height>
+   </size>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/images/logo.png</normaloff>:/images/logo.png</iconset>
+  </property>
+  <widget class="QWidget" name="WidgetMain">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <layout class="QGridLayout" name="GridLayoutWidgetMain">
+    <property name="margin">
+     <number>8</number>
+    </property>
+    <property name="spacing">
+     <number>8</number>
+    </property>
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="GridLayoutWindow" rowstretch="1,100,50" columnstretch="100,100">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
+      </property>
+      <property name="spacing">
+       <number>8</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="LabelVideo">
+        <property name="text">
+         <string>Video Buffer</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLabel" name="LabelDepth">
+        <property name="text">
+         <string>Depth Buffer</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QFrame" name="FrameDepth">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Panel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QFrame" name="FrameVideo">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Panel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <layout class="QHBoxLayout" name="HorizontalLayoutBottomLeft" stretch="0,0,0,0,0,0">
+        <property name="spacing">
+         <number>8</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QFormLayout" name="FormLayoutBottomLeft1">
+          <property name="fieldGrowthPolicy">
+           <enum>QFormLayout::ExpandingFieldsGrow</enum>
+          </property>
+          <property name="labelAlignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+          <property name="horizontalSpacing">
+           <number>8</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>8</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item row="0" column="0" colspan="2">
+           <widget class="QLabel" name="LabelStreaming">
+            <property name="frameShape">
+             <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <property name="text">
+             <string>Streaming</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QCheckBox" name="CheckBoxStreamVideo">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="toolTip">
+             <string>Stream RGB buffer to file</string>
+            </property>
+            <property name="text">
+             <string>Video</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QCheckBox" name="CheckBoxStreamDepth">
+            <property name="toolTip">
+             <string>Stream depth buffer to file</string>
+            </property>
+            <property name="text">
+             <string>Depth</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <widget class="QCheckBox" name="CheckBoxStreamMesh">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="toolTip">
+             <string>Extract geometry from depth buffer and stream to file</string>
+            </property>
+            <property name="text">
+             <string>Mesh</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0" colspan="2">
+           <widget class="QCheckBox" name="CheckBoxSyncFrames">
+            <property name="toolTip">
+             <string>Synchronise rendering when saving frames</string>
+            </property>
+            <property name="text">
+             <string>Sync Frames</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0" colspan="2">
+           <widget class="Line" name="Line6">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>32</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0" colspan="2">
+           <widget class="QLabel" name="LabelFileFormat">
+            <property name="text">
+             <string>File Format</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0" colspan="2">
+           <widget class="QRadioButton" name="RadioButtonTGA">
+            <property name="toolTip">
+             <string>Save frames in uncompressed Truevision TARGA format (fastest, biggest files)</string>
+            </property>
+            <property name="text">
+             <string>TGA</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <attribute name="buttonGroup">
+             <string>ButtonGroupFileFormat</string>
+            </attribute>
+           </widget>
+          </item>
+          <item row="8" column="0" colspan="2">
+           <widget class="QRadioButton" name="RadioButtonTGARLE">
+            <property name="toolTip">
+             <string>Save frames in Truevision TARGA format, with RLE compression (slightly slower, smaller files)</string>
+            </property>
+            <property name="text">
+             <string>TGA (RLE)</string>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+            <attribute name="buttonGroup">
+             <string>ButtonGroupFileFormat</string>
+            </attribute>
+           </widget>
+          </item>
+          <item row="9" column="0" colspan="2">
+           <widget class="QRadioButton" name="RadioButtonPNG">
+            <property name="toolTip">
+             <string>Save frames in Portable Network Graphics format (slowest, smallest files)</string>
+            </property>
+            <property name="text">
+             <string>PNG</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string>ButtonGroupFileFormat</string>
+            </attribute>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <layout class="QGridLayout" name="GridLayoutStreaming">
+            <property name="spacing">
+             <number>8</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QPushButton" name="ButtonRecord">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Start recording</string>
+              </property>
+              <property name="text">
+               <string>Record</string>
+              </property>
+              <property name="default">
+               <bool>false</bool>
+              </property>
+              <property name="flat">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QPushButton" name="ButtonStop">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Stop recording</string>
+              </property>
+              <property name="text">
+               <string>Stop</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="Line1">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QFormLayout" name="FormLayoutBottomLeft2">
+          <property name="fieldGrowthPolicy">
+           <enum>QFormLayout::FieldsStayAtSizeHint</enum>
+          </property>
+          <property name="horizontalSpacing">
+           <number>8</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>8</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item row="0" column="0" colspan="2">
+           <widget class="QLabel" name="LabelEffectsFilter">
+            <property name="text">
+             <string>Effects Filter</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <layout class="QGridLayout" name="GridLayoutFilterButtons" columnstretch="0,0,0,0,0" columnminimumwidth="0,0,0,0,0">
+            <property name="sizeConstraint">
+             <enum>QLayout::SetFixedSize</enum>
+            </property>
+            <property name="spacing">
+             <number>8</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QPushButton" name="ButtonFilter01">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>32</horstretch>
+                <verstretch>32</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>32</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Default video capture</string>
+              </property>
+              <property name="text">
+               <string>1</string>
+              </property>
+              <property name="shortcut">
+               <string>1</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QPushButton" name="ButtonFilter02">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>32</horstretch>
+                <verstretch>32</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>32</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Black and white lines</string>
+              </property>
+              <property name="text">
+               <string>2</string>
+              </property>
+              <property name="shortcut">
+               <string>2</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QPushButton" name="ButtonFilter03">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>32</horstretch>
+                <verstretch>32</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>32</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Fatty effect</string>
+              </property>
+              <property name="text">
+               <string>3</string>
+              </property>
+              <property name="shortcut">
+               <string>3</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3">
+             <widget class="QPushButton" name="ButtonFilter04">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>32</horstretch>
+                <verstretch>32</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>32</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Cubes with single colour</string>
+              </property>
+              <property name="text">
+               <string>4</string>
+              </property>
+              <property name="shortcut">
+               <string>4</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="4">
+             <widget class="QPushButton" name="ButtonFilter05">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>32</horstretch>
+                <verstretch>32</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>32</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Spheres with single colour</string>
+              </property>
+              <property name="text">
+               <string>5</string>
+              </property>
+              <property name="shortcut">
+               <string>5</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="ButtonFilter06">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>32</horstretch>
+                <verstretch>32</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>32</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Cubes with video colour</string>
+              </property>
+              <property name="text">
+               <string>6</string>
+              </property>
+              <property name="shortcut">
+               <string>6</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QPushButton" name="ButtonFilter07">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>32</horstretch>
+                <verstretch>32</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>32</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Sheres with video colour</string>
+              </property>
+              <property name="text">
+               <string>7</string>
+              </property>
+              <property name="shortcut">
+               <string>7</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QPushButton" name="ButtonFilter08">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>32</horstretch>
+                <verstretch>32</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>32</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Far cubes with single colour</string>
+              </property>
+              <property name="text">
+               <string>8</string>
+              </property>
+              <property name="shortcut">
+               <string>8</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QPushButton" name="ButtonFilter09">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>32</horstretch>
+                <verstretch>32</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>32</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Far spheres with single colour</string>
+              </property>
+              <property name="text">
+               <string>9</string>
+              </property>
+              <property name="shortcut">
+               <string>8</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="4">
+             <widget class="QPushButton" name="ButtonFilter10">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>32</horstretch>
+                <verstretch>32</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>32</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>Depth normal map</string>
+              </property>
+              <property name="text">
+               <string>10</string>
+              </property>
+              <property name="shortcut">
+               <string>8</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <widget class="QLabel" name="LabelVideoCamera">
+            <property name="text">
+             <string>Video Camera</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0" colspan="2">
+           <widget class="QRadioButton" name="RadioButtonCaptureRGB">
+            <property name="toolTip">
+             <string>Decoded RGB image</string>
+            </property>
+            <property name="text">
+             <string>RGB</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <attribute name="buttonGroup">
+             <string>ButtonGroupEffectsFilter</string>
+            </attribute>
+           </widget>
+          </item>
+          <item row="5" column="0" colspan="2">
+           <widget class="QRadioButton" name="RadioButtonCaptureBayer">
+            <property name="toolTip">
+             <string>Raw image data from camera</string>
+            </property>
+            <property name="text">
+             <string>Bayer (Raw)</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string>ButtonGroupEffectsFilter</string>
+            </attribute>
+           </widget>
+          </item>
+          <item row="6" column="0" colspan="2">
+           <widget class="QRadioButton" name="RadioButtonCaptureIR">
+            <property name="toolTip">
+             <string>Raw infrared data from depth camera</string>
+            </property>
+            <property name="text">
+             <string>Infrared</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string>ButtonGroupEffectsFilter</string>
+            </attribute>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="2">
+           <widget class="Line" name="Line7">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>32</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="Line2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QFormLayout" name="FormLayoutBottomLeft3">
+          <property name="fieldGrowthPolicy">
+           <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+          </property>
+          <property name="horizontalSpacing">
+           <number>8</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>8</number>
+          </property>
+          <item row="0" column="0" colspan="2">
+           <widget class="QLabel" name="LabelColourPicker">
+            <property name="text">
+             <string>Colour Picker</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QFrame" name="FrameColourBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="palette">
+             <palette>
+              <active>
+               <colorrole role="Base">
+                <brush brushstyle="SolidPattern">
+                 <color alpha="255">
+                  <red>255</red>
+                  <green>255</green>
+                  <blue>255</blue>
+                 </color>
+                </brush>
+               </colorrole>
+               <colorrole role="Window">
+                <brush brushstyle="SolidPattern">
+                 <color alpha="255">
+                  <red>255</red>
+                  <green>255</green>
+                  <blue>255</blue>
+                 </color>
+                </brush>
+               </colorrole>
+              </active>
+              <inactive>
+               <colorrole role="Base">
+                <brush brushstyle="SolidPattern">
+                 <color alpha="255">
+                  <red>255</red>
+                  <green>255</green>
+                  <blue>255</blue>
+                 </color>
+                </brush>
+               </colorrole>
+               <colorrole role="Window">
+                <brush brushstyle="SolidPattern">
+                 <color alpha="255">
+                  <red>255</red>
+                  <green>255</green>
+                  <blue>255</blue>
+                 </color>
+                </brush>
+               </colorrole>
+              </inactive>
+              <disabled>
+               <colorrole role="Base">
+                <brush brushstyle="SolidPattern">
+                 <color alpha="255">
+                  <red>255</red>
+                  <green>255</green>
+                  <blue>255</blue>
+                 </color>
+                </brush>
+               </colorrole>
+               <colorrole role="Window">
+                <brush brushstyle="SolidPattern">
+                 <color alpha="255">
+                  <red>255</red>
+                  <green>255</green>
+                  <blue>255</blue>
+                 </color>
+                </brush>
+               </colorrole>
+              </disabled>
+             </palette>
+            </property>
+            <property name="toolTip">
+             <string>Current colour used by the filter</string>
+            </property>
+            <property name="autoFillBackground">
+             <bool>true</bool>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Panel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QPushButton" name="ButtonColourPicker">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="toolTip">
+             <string>Open colour picker dialogue</string>
+            </property>
+            <property name="text">
+             <string>Change</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <widget class="QLabel" name="LabelTextureAlignment">
+            <property name="text">
+             <string>Texture Alignment</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0" colspan="2">
+           <widget class="QRadioButton" name="RadioButtonCalibrationTrans">
+            <property name="toolTip">
+             <string>Use the W, A, S and D keys to either translate, or scale the video texture for alignment.</string>
+            </property>
+            <property name="text">
+             <string>Translate</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <attribute name="buttonGroup">
+             <string>ButtonGroupCalibrate</string>
+            </attribute>
+           </widget>
+          </item>
+          <item row="5" column="0" colspan="2">
+           <widget class="QRadioButton" name="RadioButtonCalibrationScale">
+            <property name="toolTip">
+             <string>Use the W, A, S and D keys to either translate, or scale the video texture for alignment.</string>
+            </property>
+            <property name="text">
+             <string>Scale</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string>ButtonGroupCalibrate</string>
+            </attribute>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="2">
+           <widget class="Line" name="Line8">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>32</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="Line5">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="2" column="1">
+       <layout class="QVBoxLayout" name="VerticalLayoutBottomRight">
+        <property name="spacing">
+         <number>8</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QGridLayout" name="GridLayoutDepthSliders">
+          <item row="0" column="0">
+           <widget class="QLabel" name="LabelDepthFront">
+            <property name="text">
+             <string>Front</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="LabelDepthNear1">
+            <property name="text">
+             <string>Near</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QSlider" name="SliderDepthNear">
+            <property name="toolTip">
+             <string>Change the dynamic range by moving the front clipping plane</string>
+            </property>
+            <property name="maximum">
+             <number>65535</number>
+            </property>
+            <property name="pageStep">
+             <number>16</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="tickPosition">
+             <enum>QSlider::TicksAbove</enum>
+            </property>
+            <property name="tickInterval">
+             <number>2048</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="LabelDepthFar1">
+            <property name="text">
+             <string>Far</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="LabelDepthBack">
+            <property name="text">
+             <string>Back</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="LabelDepthNear2">
+            <property name="text">
+             <string>Near</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QLabel" name="LabelDepthFar2">
+            <property name="text">
+             <string>Far</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QSlider" name="SliderDepthFar">
+            <property name="toolTip">
+             <string>Change the dynamic range by moving the back clipping plane</string>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="minimum">
+             <number>0</number>
+            </property>
+            <property name="maximum">
+             <number>65535</number>
+            </property>
+            <property name="pageStep">
+             <number>16</number>
+            </property>
+            <property name="sliderPosition">
+             <number>65535</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="invertedAppearance">
+             <bool>false</bool>
+            </property>
+            <property name="invertedControls">
+             <bool>false</bool>
+            </property>
+            <property name="tickPosition">
+             <enum>QSlider::TicksAbove</enum>
+            </property>
+            <property name="tickInterval">
+             <number>2048</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="LabelDepthClip">
+            <property name="text">
+             <string>Clip</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="LabelDepthNear3">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Near</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QSlider" name="SliderDepthClip">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="toolTip">
+             <string>Set the clipping threshold within the front and back depth range</string>
+            </property>
+            <property name="maximum">
+             <number>65535</number>
+            </property>
+            <property name="singleStep">
+             <number>1</number>
+            </property>
+            <property name="pageStep">
+             <number>16</number>
+            </property>
+            <property name="value">
+             <number>65535</number>
+            </property>
+            <property name="sliderPosition">
+             <number>65535</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="invertedAppearance">
+             <bool>false</bool>
+            </property>
+            <property name="invertedControls">
+             <bool>false</bool>
+            </property>
+            <property name="tickPosition">
+             <enum>QSlider::TicksAbove</enum>
+            </property>
+            <property name="tickInterval">
+             <number>2048</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QLabel" name="LabelDepthFar3">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Far</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="line">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="HorizontalLayoutBottomRight" stretch="0,0,0,0,0">
+          <property name="spacing">
+           <number>8</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <layout class="QFormLayout" name="FormLayoutBottomRight1">
+            <property name="fieldGrowthPolicy">
+             <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+            </property>
+            <item row="0" column="0" colspan="2">
+             <widget class="QLabel" name="LabelClippingMode">
+              <property name="text">
+               <string>Clipping Mode</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QRadioButton" name="RadioButtonDepthClipEraseBack">
+              <property name="toolTip">
+               <string>Erase depth values behind the clipping threshold</string>
+              </property>
+              <property name="text">
+               <string>Erase Back</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <attribute name="buttonGroup">
+               <string>ButtonGroupDepthClip</string>
+              </attribute>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="2">
+             <widget class="QRadioButton" name="RadioButtonDepthClipEraseFront">
+              <property name="toolTip">
+               <string>Erase depth values in front of the clipping threshold</string>
+              </property>
+              <property name="text">
+               <string>Erase Front</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+              <attribute name="buttonGroup">
+               <string>ButtonGroupDepthClip</string>
+              </attribute>
+             </widget>
+            </item>
+            <item row="3" column="0" colspan="2">
+             <widget class="QRadioButton" name="RadioButtonDepthClipClampBack">
+              <property name="toolTip">
+               <string>Clamp depth values behind the clipping threshold</string>
+              </property>
+              <property name="text">
+               <string>Clamp Back</string>
+              </property>
+              <attribute name="buttonGroup">
+               <string>ButtonGroupDepthClip</string>
+              </attribute>
+             </widget>
+            </item>
+            <item row="4" column="0" colspan="2">
+             <widget class="QRadioButton" name="RadioButtonDepthClipClampFront">
+              <property name="toolTip">
+               <string>Clamp depth values in front of the clipping threshold</string>
+              </property>
+              <property name="text">
+               <string>Clamp Front</string>
+              </property>
+              <attribute name="buttonGroup">
+               <string>ButtonGroupDepthClip</string>
+              </attribute>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="Line" name="Line3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QFormLayout" name="FormLayoutBottomRight2">
+            <property name="fieldGrowthPolicy">
+             <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+            </property>
+            <item row="0" column="0" colspan="2">
+             <widget class="QLabel" name="LabelPalette">
+              <property name="text">
+               <string>Palette</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="2">
+             <widget class="QRadioButton" name="RadioButtonDepthGrey">
+              <property name="toolTip">
+               <string>Default depth buffer colour</string>
+              </property>
+              <property name="text">
+               <string>Greyscale</string>
+              </property>
+              <property name="checked">
+               <bool>false</bool>
+              </property>
+              <attribute name="buttonGroup">
+               <string>ButtonGroupDepthPalette</string>
+              </attribute>
+             </widget>
+            </item>
+            <item row="3" column="0" colspan="2">
+             <widget class="QRadioButton" name="RadioButtonDepthThermal">
+              <property name="toolTip">
+               <string>Render depth buffer with thermal pallette</string>
+              </property>
+              <property name="text">
+               <string>Thermal</string>
+              </property>
+              <attribute name="buttonGroup">
+               <string>ButtonGroupDepthPalette</string>
+              </attribute>
+             </widget>
+            </item>
+            <item row="4" column="0" colspan="2">
+             <widget class="QRadioButton" name="RadioButtonDepthSpectrum">
+              <property name="toolTip">
+               <string>Render depth buffer with spectrum pallette</string>
+              </property>
+              <property name="text">
+               <string>Spectrum</string>
+              </property>
+              <attribute name="buttonGroup">
+               <string>ButtonGroupDepthPalette</string>
+              </attribute>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QRadioButton" name="RadioButtonDepthSaturate">
+              <property name="toolTip">
+               <string>Render depth buffer with saturation highlight</string>
+              </property>
+              <property name="text">
+               <string>Saturation</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+              <attribute name="buttonGroup">
+               <string>ButtonGroupDepthPalette</string>
+              </attribute>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="Line" name="Line4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QFormLayout" name="FormLayoutBottomRight3">
+            <item row="1" column="0">
+             <widget class="QLabel" name="LabelRoomLength">
+              <property name="text">
+               <string>Room Length:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QSpinBox" name="SpinBoxRoomLength">
+              <property name="toolTip">
+               <string>Limit the dynamic range of the depth buffer to a specific room length</string>
+              </property>
+              <property name="suffix">
+               <string> m</string>
+              </property>
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <number>40</number>
+              </property>
+              <property name="value">
+               <number>5</number>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0" colspan="2">
+             <widget class="QCheckBox" name="CheckBoxDepthTransform">
+              <property name="text">
+               <string>Linear Depth</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="Menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1024</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="defaultUp">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="MenuFile">
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="tearOffEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="ActionNew"/>
+    <addaction name="separator"/>
+    <addaction name="ActionQuit"/>
+   </widget>
+   <widget class="QMenu" name="MenuAbout">
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::DefaultContextMenu</enum>
+    </property>
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="ActionHelp"/>
+    <addaction name="separator"/>
+    <addaction name="ActionAbout"/>
+   </widget>
+   <addaction name="MenuFile"/>
+   <addaction name="MenuAbout"/>
+  </widget>
+  <widget class="QStatusBar" name="Statusbar">
+   <property name="statusTip">
+    <string/>
+   </property>
+  </widget>
+  <action name="ActionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="ActionHelp">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Help</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="ActionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="ActionNew">
+   <property name="text">
+    <string>New Capture</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>ButtonFilter01</tabstop>
+  <tabstop>ButtonFilter02</tabstop>
+  <tabstop>ButtonFilter03</tabstop>
+  <tabstop>ButtonFilter04</tabstop>
+  <tabstop>ButtonFilter05</tabstop>
+  <tabstop>ButtonFilter06</tabstop>
+  <tabstop>ButtonFilter07</tabstop>
+  <tabstop>ButtonFilter08</tabstop>
+  <tabstop>RadioButtonDepthGrey</tabstop>
+  <tabstop>RadioButtonDepthThermal</tabstop>
+  <tabstop>RadioButtonDepthSpectrum</tabstop>
+ </tabstops>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>ActionNew</sender>
+   <signal>triggered()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>MenuActionNew()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionQuit</sender>
+   <signal>triggered()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>MenuActionQuit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionHelp</sender>
+   <signal>triggered()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>MenuActionHelp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionAbout</sender>
+   <signal>triggered()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>MenuActionAbout()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonRecord</sender>
+   <signal>pressed()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>ButtonActionRecord()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>62</x>
+     <y>453</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonStop</sender>
+   <signal>pressed()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>ButtonActionStop()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>168</x>
+     <y>453</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CheckBoxStreamVideo</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>WindowMain</receiver>
+   <slot>CheckBoxActionStreamVideo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>57</x>
+     <y>479</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CheckBoxStreamDepth</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>WindowMain</receiver>
+   <slot>CheckBoxActionStreamDepth()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>479</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CheckBoxStreamMesh</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>WindowMain</receiver>
+   <slot>CheckBoxActionStreamMesh()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>57</x>
+     <y>505</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonFilter01</sender>
+   <signal>pressed()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>ButtonActionFilter01()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>222</x>
+     <y>454</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonFilter02</sender>
+   <signal>pressed()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>ButtonActionFilter02()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>262</x>
+     <y>454</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonFilter03</sender>
+   <signal>pressed()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>ButtonActionFilter03()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>302</x>
+     <y>454</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonFilter04</sender>
+   <signal>pressed()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>ButtonActionFilter04()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>342</x>
+     <y>454</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonFilter05</sender>
+   <signal>pressed()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>ButtonActionFilter05()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>382</x>
+     <y>454</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonFilter06</sender>
+   <signal>pressed()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>ButtonActionFilter06()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>222</x>
+     <y>494</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonFilter07</sender>
+   <signal>pressed()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>ButtonActionFilter07()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>262</x>
+     <y>494</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonFilter08</sender>
+   <signal>pressed()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>ButtonActionFilter08()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>302</x>
+     <y>494</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderDepthClip</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>WindowMain</receiver>
+   <slot>SliderActionDepthClip(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>991</x>
+     <y>490</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RadioButtonDepthClipEraseBack</sender>
+   <signal>clicked()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>RadioButtonActionDepthEraseBack()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>685</x>
+     <y>557</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RadioButtonDepthClipEraseFront</sender>
+   <signal>clicked()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>RadioButtonActionDepthEraseFront()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>685</x>
+     <y>581</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RadioButtonDepthGrey</sender>
+   <signal>clicked()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>RadioButtonActionDepthPaletteGrey()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>848</x>
+     <y>557</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RadioButtonDepthThermal</sender>
+   <signal>clicked()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>RadioButtonActionDepthPaletteThermal()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>848</x>
+     <y>581</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RadioButtonDepthSpectrum</sender>
+   <signal>clicked()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>RadioButtonActionDepthPaletteSpectrum()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>848</x>
+     <y>605</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RadioButtonDepthClipClampBack</sender>
+   <signal>clicked()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>RadioButtonActionDepthClampBack()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>685</x>
+     <y>605</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>319</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RadioButtonDepthClipClampFront</sender>
+   <signal>clicked()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>RadioButtonActionDepthClampFront()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>685</x>
+     <y>629</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>319</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RadioButtonCaptureRGB</sender>
+   <signal>clicked()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>RadioButtonActionCaptureRGB()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>383</x>
+     <y>542</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>319</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RadioButtonCaptureBayer</sender>
+   <signal>clicked()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>RadioButtonActionCaptureBayer()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>383</x>
+     <y>568</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>319</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RadioButtonCaptureIR</sender>
+   <signal>clicked()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>RadioButtonActionCaptureIR()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>383</x>
+     <y>594</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>319</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RadioButtonTGA</sender>
+   <signal>clicked()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>RadioButtonActionTGA()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>133</x>
+     <y>578</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>319</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RadioButtonPNG</sender>
+   <signal>clicked()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>RadioButtonActionPNG()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>133</x>
+     <y>630</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>319</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderDepthNear</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>WindowMain</receiver>
+   <slot>SliderActionDepthNear(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>991</x>
+     <y>426</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SliderDepthFar</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>WindowMain</receiver>
+   <slot>SliderActionDepthFar(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>991</x>
+     <y>458</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>SpinBoxRoomLength</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>WindowMain</receiver>
+   <slot>SpinBoxActionRoomLength(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1011</x>
+     <y>564</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RadioButtonTGARLE</sender>
+   <signal>clicked()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>RadioButtonActionTGARLE()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>128</x>
+     <y>604</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CheckBoxSyncFrames</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>WindowMain</receiver>
+   <slot>CheckBoxActionSyncFrames()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>73</x>
+     <y>531</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>RadioButtonDepthSaturate</sender>
+   <signal>clicked()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>RadioButtonActionDepthPaletteSaturate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>848</x>
+     <y>629</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonColourPicker</sender>
+   <signal>pressed()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>ButtonActionColourPicker()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>453</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonFilter09</sender>
+   <signal>pressed()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>ButtonActionFilter09()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>342</x>
+     <y>494</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonFilter10</sender>
+   <signal>pressed()</signal>
+   <receiver>WindowMain</receiver>
+   <slot>ButtonActionFilter10()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>382</x>
+     <y>494</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CheckBoxDepthTransform</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>WindowMain</receiver>
+   <slot>CheckBoxActionDepthTransform()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>940</x>
+     <y>529</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>511</x>
+     <y>329</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>MenuActionNew()</slot>
+  <slot>MenuActionQuit()</slot>
+  <slot>MenuActionHelp()</slot>
+  <slot>MenuActionAbout()</slot>
+  <slot>ButtonActionRecord()</slot>
+  <slot>ButtonActionStop()</slot>
+  <slot>CheckBoxActionStreamVideo()</slot>
+  <slot>CheckBoxActionStreamDepth()</slot>
+  <slot>CheckBoxActionStreamMesh()</slot>
+  <slot>ButtonActionFilter01()</slot>
+  <slot>ButtonActionFilter02()</slot>
+  <slot>ButtonActionFilter03()</slot>
+  <slot>ButtonActionFilter04()</slot>
+  <slot>ButtonActionFilter05()</slot>
+  <slot>ButtonActionFilter06()</slot>
+  <slot>ButtonActionFilter07()</slot>
+  <slot>ButtonActionFilter08()</slot>
+  <slot>SliderActionDepthClip(int)</slot>
+  <slot>RadioButtonActionDepthPaletteGrey()</slot>
+  <slot>RadioButtonActionDepthPaletteThermal()</slot>
+  <slot>RadioButtonActionDepthPaletteSpectrum()</slot>
+  <slot>RadioButtonActionDepthEraseBack()</slot>
+  <slot>RadioButtonActionDepthEraseFront()</slot>
+  <slot>RadioButtonActionDepthClampBack()</slot>
+  <slot>RadioButtonActionDepthClampFront()</slot>
+  <slot>RadioButtonActionCaptureRGB()</slot>
+  <slot>RadioButtonActionCaptureBayer()</slot>
+  <slot>RadioButtonActionCaptureIR()</slot>
+  <slot>RadioButtonActionTGA()</slot>
+  <slot>RadioButtonActionPNG()</slot>
+  <slot>SliderActionDepthNear(int)</slot>
+  <slot>SliderActionDepthFar(int)</slot>
+  <slot>SpinBoxActionRoomLength(int)</slot>
+  <slot>RadioButtonActionTGARLE()</slot>
+  <slot>CheckBoxActionSyncFrames()</slot>
+  <slot>CheckBoxActionDepthTransform()</slot>
+  <slot>RadioButtonActionDepthPaletteSaturate()</slot>
+  <slot>ButtonActionColourPicker()</slot>
+  <slot>ButtonActionFilter09()</slot>
+  <slot>ButtonActionFilter10()</slot>
+ </slots>
+ <buttongroups>
+  <buttongroup name="ButtonGroupDepthPalette"/>
+  <buttongroup name="ButtonGroupDepthClip"/>
+  <buttongroup name="ButtonGroupCalibrate"/>
+  <buttongroup name="ButtonGroupEffectsFilter"/>
+  <buttongroup name="ButtonGroupFileFormat"/>
+ </buttongroups>
+</ui>
