@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{854A9339-3E58-4814-B43F-5971ACA12F61}</ProjectGuid>
+    <RootNamespace>kfx</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)bin32d\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IntDir>bin32d\obj\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
+    <CustomBuildAfterTargets>
+    </CustomBuildAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)bin32\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>bin32\obj\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>UNICODE;WIN32;WINDOWS;_WINDOWS;DEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_HAVE_3DNOW;QT_HAVE_MMX;QT_HAVE_MMXEXT;QT_HAVE_SSE;QT_HAVE_SSE2;QT_LARGEFILE_SUPPORT;QT_OPENGL_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <SmallerTypeCheck>true</SmallerTypeCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <AdditionalIncludeDirectories>$(QTDIR)\include;$(QTDIR)\mkspecs\win32-msvc2010;$(OutDir)\ui;$(SDKPATH)\GLEW\include;$(SDKPATH)\libfreenect\include;$(SDKPATH)\zlib;$(SDKPATH)\libpng;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <ExceptionHandling>Async</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(SDKPATH)\GLEW\lib32\;$(SDKPATH)\libfreenect\lib\Debug\;$(SDKPATH)\openkinect.zephod\lib\Debug\;$(SDKPATH)\zlib\lib\Win32\DLL Debug\;$(SDKPATH)\libpng\lib\Win32\DLL Debug\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>QtCored4.lib;QtGuid4.lib;QtOpenGLd4.lib;qtmaind.lib;opengl32.lib;glu32.lib;glew32.lib;freenect.lib;zlib1d.lib;libpng14d.lib;advapi32.lib;comdlg32.lib;gdi32.lib;imm32.lib;kernel32.lib;msimg32.lib;odbc32.lib;odbccp32.lib;ole32.lib;oleaut32.lib;shell32.lib;user32.lib;uuid.lib;winmm.lib;winspool.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CustomBuildStep>
+      <Command>
+      </Command>
+    </CustomBuildStep>
+    <CustomBuildStep>
+      <Message>
+      </Message>
+    </CustomBuildStep>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <PreprocessorDefinitions>UNICODE;WIN32;WINDOWS;_WINDOWS;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_HAVE_3DNOW;QT_HAVE_MMX;QT_HAVE_MMXEXT;QT_HAVE_SSE;QT_HAVE_SSE2;QT_LARGEFILE_SUPPORT;QT_NO_DEBUG;QT_OPENGL_LIB;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <StructMemberAlignment>16Bytes</StructMemberAlignment>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <CallingConvention>Cdecl</CallingConvention>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <AdditionalIncludeDirectories>$(QTDIR)\include;$(QTDIR)\mkspecs\win32-msvc2010;$(OutDir)\ui;$(SDKPATH)\GLEW\include;$(SDKPATH)\libfreenect\include;$(SDKPATH)\zlib;$(SDKPATH)\libpng;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <ExceptionHandling>Async</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SubSystem>Console</SubSystem>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(SDKPATH)\GLEW\lib32\;$(SDKPATH)\libfreenect\lib\Release\;$(SDKPATH)\openkinect.zephod\lib\Release;$(SDKPATH)\zlib\lib\Win32\DLL Release\;$(SDKPATH)\libpng\lib\Win32\DLL Release\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>qtmain.lib;QtGui4.lib;QtCore4.lib;QtOpenGL4.lib;opengl32.lib;glu32.lib;glew32.lib;freenect.lib;zlib1.lib;libpng14.lib;advapi32.lib;comdlg32.lib;gdi32.lib;imm32.lib;kernel32.lib;msimg32.lib;ole32.lib;oleaut32.lib;shell32.lib;user32.lib;uuid.lib;winmm.lib;winspool.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\code\source\buffers.cpp" />
+    <ClCompile Include="..\code\source\file.cpp" />
+    <ClCompile Include="..\code\source\filter_solids.cpp" />
+    <ClCompile Include="..\code\source\filter_fatty.cpp" />
+    <ClCompile Include="..\code\source\filter_nmap.cpp" />
+    <ClCompile Include="..\code\source\lighting.cpp" />
+    <ClCompile Include="..\code\source\material.cpp" />
+    <ClCompile Include="..\code\source\thread_capture.cpp" />
+    <ClCompile Include="..\code\source\debug.cpp" />
+    <ClCompile Include="..\code\source\file_png.cpp" />
+    <ClCompile Include="..\code\source\file_text.cpp" />
+    <ClCompile Include="..\code\source\file_tga.cpp" />
+    <ClCompile Include="..\code\source\filter_lines.cpp" />
+    <ClCompile Include="..\code\source\filter_palette.cpp" />
+    <ClCompile Include="..\code\source\thread_kinect.cpp" />
+    <ClCompile Include="..\code\source\filter.cpp" />
+    <ClCompile Include="..\code\source\glwidget.cpp" />
+    <ClCompile Include="..\code\source\kinect.cpp" />
+    <ClCompile Include="..\code\source\mesh.cpp" />
+    <ClCompile Include="..\code\source\mesh_shapes.cpp" />
+    <ClCompile Include="..\code\source\mutex.cpp" />
+    <ClCompile Include="..\code\source\form_window.cpp" />
+    <ClCompile Include="..\code\source\main.cpp" />
+    <ClCompile Include="..\code\source\shader.cpp" />
+    <ClCompile Include="..\code\source\texture.cpp" />
+    <ClCompile Include="bin32d\moc\moc_thread_capture.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="bin32d\moc\moc_form_window.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="bin32d\moc\moc_glwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="bin32d\moc\moc_thread_kinect.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="bin32d\rcc\qrc_resource.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="bin32\moc\moc_thread_capture.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="bin32\moc\moc_form_window.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="bin32\moc\moc_glwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="bin32\moc\moc_thread_kinect.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="bin32\rcc\qrc_resource.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\code\source\array.h" />
+    <ClInclude Include="..\code\source\buffers.h" />
+    <ClInclude Include="..\code\source\filter_solids.h" />
+    <ClInclude Include="..\code\source\filter_fatty.h" />
+    <ClInclude Include="..\code\source\filter_lines.h" />
+    <ClInclude Include="..\code\source\filter_nmap.h" />
+    <ClInclude Include="..\code\source\lighting.h" />
+    <ClInclude Include="..\code\source\material.h" />
+    <ClInclude Include="bin32d\ui\ui_form_window.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="bin32\ui\ui_form_window.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <CustomBuild Include="..\code\source\thread_capture.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"$(QTDIR)\include" -I"$(QTDIR)\mkspecs\win32-msvc2010" ..\code\source\thread_capture.h -o $(OutDir)\moc\moc_thread_capture.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc thread_capture.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)\moc\moc_thread_capture.cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\code\source\thread_capture.h</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"$(QTDIR)\include" -I"$(QTDIR)\mkspecs\win32-msvc2010" ..\code\source\thread_capture.h -o $(OutDir)\moc\moc_thread_capture.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc thread_capture.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)\moc\moc_thread_capture.cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\code\source\thread_capture.h</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="..\code\source\debug.h" />
+    <CustomBuild Include="..\code\source\thread_kinect.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"$(QTDIR)\include" -I"$(QTDIR)\mkspecs\win32-msvc2010" ..\code\source\thread_kinect.h -o $(OutDir)\moc\moc_thread_kinect.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc thread_kinect.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)\moc\moc_thread_kinect.cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\code\source\thread_kinect.h</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"$(QTDIR)\include" -I"$(QTDIR)\mkspecs\win32-msvc2010" ..\code\source\thread_kinect.h -o $(OutDir)\moc\moc_thread_kinect.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc thread_kinect.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)\moc\moc_thread_kinect.cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\code\source\thread_kinect.h</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="..\code\source\element.h" />
+    <ClInclude Include="..\code\source\file.h" />
+    <ClInclude Include="..\code\source\file_png.h" />
+    <ClInclude Include="..\code\source\file_text.h" />
+    <ClInclude Include="..\code\source\file_tga.h" />
+    <ClInclude Include="..\code\source\filter.h" />
+    <ClInclude Include="..\code\source\filter_palette.h" />
+    <ClInclude Include="..\code\source\common.h" />
+    <ClInclude Include="..\code\source\config.h" />
+    <ClInclude Include="..\code\source\kinect.h" />
+    <ClInclude Include="..\code\source\math.h" />
+    <ClInclude Include="..\code\source\matrix.h" />
+    <ClInclude Include="..\code\source\mesh.h" />
+    <ClInclude Include="..\code\source\mutex.h" />
+    <ClInclude Include="..\code\source\shader.h" />
+    <ClInclude Include="..\code\source\texture.h" />
+    <ClInclude Include="..\code\source\vector.h" />
+    <ClInclude Include="..\code\source\vector2.h" />
+    <ClInclude Include="..\code\source\vector4.h" />
+    <ClInclude Include="..\code\source\vertex.h" />
+    <CustomBuild Include="..\code\source\form_window.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"$(QTDIR)\include" -I"$(QTDIR)\mkspecs\win32-msvc2010" ..\code\source\form_window.h -o $(OutDir)\moc\moc_form_window.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc form_window.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)\moc\moc_form_window.cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\code\source\form_window.h</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"$(QTDIR)\include" -I"$(QTDIR)\mkspecs\win32-msvc2010" ..\code\source\form_window.h -o $(OutDir)\moc\moc_form_window.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc form_window.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)\moc\moc_form_window.cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\code\source\form_window.h</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\code\source\glwidget.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"$(QTDIR)\include" -I"$(QTDIR)\mkspecs\win32-msvc2010" ..\code\source\glwidget.h -o $(OutDir)\moc\moc_glwidget.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moc glwidget.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)\moc\moc_glwidget.cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\code\source\glwidget.h</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_DLL -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I"$(QTDIR)\include" -I"$(QTDIR)\mkspecs\win32-msvc2010" ..\code\source\glwidget.h -o $(OutDir)\moc\moc_glwidget.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">moc glwidget.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)\moc\moc_glwidget.cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\code\source\glwidget.h</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="..\code\source\main.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\code\resource\form_window.ui">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe ..\code\resource\form_window.ui -o $(OutDir)\ui\ui_form_window.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">uic form_window.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)\ui\ui_form_window.h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\code\resource\form_window.ui</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe ..\code\resource\form_window.ui -o $(OutDir)\ui\ui_form_window.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">uic form_window.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)\ui\ui_form_window.h</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\code\resource\form_window.ui</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="..\code\resource\resource.qrc">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\rcc.exe -compress 9 -name kfx_resource ..\code\resource\resource.qrc -o $(OutDir)\rcc\qrc_resource.cpp</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)\rcc\qrc_resource.cpp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">rcc.exe resource.qrc</Message>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\code\resource\resource.qrc;..\code\resource\logo.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\rcc.exe -compress 9 -name kfx_resource ..\code\resource\resource.qrc -o $(OutDir)\rcc\qrc_resource.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">rcc.exe resource.qrc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)\rcc\qrc_resource.cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\code\resource\resource.qrc;..\code\resource\logo.png;%(AdditionalInputs)</AdditionalInputs>
+      <SubType>Designer</SubType>
+    </CustomBuild>
+    <None Include="..\assets\filter.frag" />
+    <None Include="..\assets\filter.vert" />
+    <None Include="..\assets\filter_fatty.frag" />
+    <None Include="..\assets\filter_fatty.vert" />
+    <None Include="..\assets\filter_lines.frag" />
+    <None Include="..\assets\filter_nmap.frag" />
+    <None Include="..\assets\filter_palette.frag" />
+    <None Include="..\assets\filter_solids.frag" />
+    <None Include="..\assets\filter_solids_depth.vert" />
+    <None Include="..\assets\filter_solids_video.vert" />
+    <None Include="..\assets\lines.png" />
+    <None Include="..\assets\palette.png" />
+    <None Include="..\code\resource\logo.ico" />
+    <None Include="..\code\resource\logo.png" />
+    <None Include="..\code\resource\logo.pspimage" />
+    <None Include="..\docs\license-glew.txt" />
+    <None Include="..\docs\license-libfreenect.txt" />
+    <None Include="..\docs\license-libusb.txt" />
+    <None Include="..\docs\license-qt.txt" />
+    <None Include="..\docs\readme.txt" />
+    <None Include="..\etc\docs\design_notes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\code\resource\resource.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

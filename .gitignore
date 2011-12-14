@@ -1,0 +1,12 @@
+etc/
+build/
+install/
+windows/bin32/
+windows/bin32d/
+windows/ipch/
+windows/*.tws
+windows/*.sdf
+windows/*.suo
+kfx*.dmg
+kfx*.rar
+.ds_store

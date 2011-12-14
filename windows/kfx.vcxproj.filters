@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{c8740b02-9cde-4416-af36-f5bf2a4dd404}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Documents">
+      <UniqueIdentifier>{1d636f83-198a-47ad-9990-e528bd976604}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\common">
+      <UniqueIdentifier>{20815bc9-6372-477c-99ed-59c1449e198f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common">
+      <UniqueIdentifier>{522e4750-81b5-4785-bdc9-5d48bc65b949}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\filters">
+      <UniqueIdentifier>{06cc7672-6034-4d78-ad8c-0d4523ccf99c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\math">
+      <UniqueIdentifier>{a2f8e694-9a03-43f0-a903-c02391cadb43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\graphics">
+      <UniqueIdentifier>{0f616785-8fb1-4b2b-8321-d35c71f4ad2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\graphics">
+      <UniqueIdentifier>{7c2ec588-9d68-4a25-9e0d-252b7b6d4e80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\filters">
+      <UniqueIdentifier>{0cc12a97-8fcf-4288-8993-4f990077fa86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\kinect">
+      <UniqueIdentifier>{e7976590-a105-418b-95db-17868b7700b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\kinect">
+      <UniqueIdentifier>{4e315ba4-7346-438a-a824-cc9d1aaf4270}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\file">
+      <UniqueIdentifier>{100c0ed4-0df6-4a7b-b8c7-faea6ede1adf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\file">
+      <UniqueIdentifier>{140a12d9-cb40-4a5b-8bbc-99491e813c38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{0f2626e0-b02a-4cb7-89df-6ac31c71d51d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\qt">
+      <UniqueIdentifier>{7298bf0b-e28b-4c8b-9748-6536663b2a7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\qt">
+      <UniqueIdentifier>{6e0b2bb9-aba7-4634-ae96-a566b1c94229}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\code\source\form_window.cpp">
+      <Filter>Source Files\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\filter.cpp">
+      <Filter>Source Files\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\glwidget.cpp">
+      <Filter>Source Files\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\texture.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\mesh_shapes.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\mesh.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\main.cpp">
+      <Filter>Source Files\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\kinect.cpp">
+      <Filter>Source Files\kinect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\shader.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\debug.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\file_png.cpp">
+      <Filter>Source Files\file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\file_text.cpp">
+      <Filter>Source Files\file</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\filter_palette.cpp">
+      <Filter>Source Files\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\mutex.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\file_tga.cpp">
+      <Filter>Source Files\file</Filter>
+    </ClCompile>
+    <ClCompile Include="bin32d\moc\moc_form_window.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin32d\moc\moc_thread_kinect.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin32\moc\moc_form_window.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin32\moc\moc_thread_kinect.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin32d\rcc\qrc_resource.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin32\rcc\qrc_resource.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\filter_lines.cpp">
+      <Filter>Source Files\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\buffers.cpp">
+      <Filter>Source Files\kinect</Filter>
+    </ClCompile>
+    <ClCompile Include="bin32d\moc\moc_glwidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin32\moc\moc_glwidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin32d\moc\moc_thread_capture.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bin32\moc\moc_thread_capture.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\thread_capture.cpp">
+      <Filter>Source Files\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\thread_kinect.cpp">
+      <Filter>Source Files\qt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\filter_nmap.cpp">
+      <Filter>Source Files\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\filter_fatty.cpp">
+      <Filter>Source Files\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\lighting.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\material.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\filter_solids.cpp">
+      <Filter>Source Files\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\source\file.cpp">
+      <Filter>Source Files\file</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\code\source\common.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\config.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\debug.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\filter.h">
+      <Filter>Header Files\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\array.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\vector.h">
+      <Filter>Header Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\vector2.h">
+      <Filter>Header Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\vector4.h">
+      <Filter>Header Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\matrix.h">
+      <Filter>Header Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\math.h">
+      <Filter>Header Files\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\vertex.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\texture.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\mesh.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\element.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\main.h">
+      <Filter>Header Files\qt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\kinect.h">
+      <Filter>Header Files\kinect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\shader.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\file_png.h">
+      <Filter>Header Files\file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\file.h">
+      <Filter>Header Files\file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\file_text.h">
+      <Filter>Header Files\file</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\filter_palette.h">
+      <Filter>Header Files\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\mutex.h">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\file_tga.h">
+      <Filter>Header Files\file</Filter>
+    </ClInclude>
+    <ClInclude Include="bin32d\ui\ui_form_window.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bin32\ui\ui_form_window.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\filter_lines.h">
+      <Filter>Header Files\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\buffers.h">
+      <Filter>Header Files\kinect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\filter_nmap.h">
+      <Filter>Header Files\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\filter_fatty.h">
+      <Filter>Header Files\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\lighting.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\material.h">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\code\source\filter_solids.h">
+      <Filter>Header Files\filters</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\code\resource\resource.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\code\resource\form_window.ui">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\code\source\form_window.h">
+      <Filter>Header Files\qt</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\code\source\glwidget.h">
+      <Filter>Header Files\qt</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\code\source\thread_capture.h">
+      <Filter>Header Files\qt</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\code\source\thread_kinect.h">
+      <Filter>Header Files\qt</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\code\resource\logo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\code\resource\logo.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\assets\filter.frag">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\assets\filter.vert">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\assets\filter_fatty.frag">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\assets\filter_fatty.vert">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\assets\filter_lines.frag">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\assets\filter_nmap.frag">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\assets\filter_palette.frag">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\assets\filter_solids.frag">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\assets\filter_solids_depth.vert">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\assets\filter_solids_video.vert">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\assets\lines.png">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\assets\palette.png">
+      <Filter>Assets</Filter>
+    </None>
+    <None Include="..\code\resource\logo.pspimage">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\etc\docs\design_notes.txt">
+      <Filter>Documents</Filter>
+    </None>
+    <None Include="..\docs\license-glew.txt">
+      <Filter>Documents</Filter>
+    </None>
+    <None Include="..\docs\license-libfreenect.txt">
+      <Filter>Documents</Filter>
+    </None>
+    <None Include="..\docs\license-libusb.txt">
+      <Filter>Documents</Filter>
+    </None>
+    <None Include="..\docs\license-qt.txt">
+      <Filter>Documents</Filter>
+    </None>
+    <None Include="..\docs\readme.txt">
+      <Filter>Documents</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\code\resource\resource.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
