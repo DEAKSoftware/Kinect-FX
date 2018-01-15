@@ -39,6 +39,6 @@ Please read doc/readme.txt for build instructions.
 
 ## 4 License
 
-Please read [MIT License](./doc/license-kfx.md) for terms and conditions.
+Please read [MIT License](./docs/license-kfx.md) for terms and conditions.
 
 KFX is copyright (C) 2011, [Bjango Pty Ltd](https://bjango.com), and [DEAK Software](https://deaksoftware.com.au). "Kinect", "XBox" and "XBox360" are trademarks owned by Microsoft Corporation.
