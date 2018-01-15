@@ -26,8 +26,8 @@ kfx.windows.pri | Windows project include for qmake
 
 For your convenience, compiled versions of the project is also included in this repository:
 
-   kfx-macosx-YYYY-MM-DD.dmg
-   kfx-windows-YYYY-MM-DD.rar
+    kfx-macosx-YYYY-MM-DD.dmg
+    kfx-windows-YYYY-MM-DD.rar
 
 The YYYY-MM-DD fields denote the build date.
 
