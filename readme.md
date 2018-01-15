@@ -34,7 +34,8 @@ The YYYY-MM-DD fields denote the build date.
 
 ## 3 Documentation
 
-Please read doc/readme.txt for build instructions.
+* [Build Instructions](./docs/readme.md)
+* [Project License](./docs/license-kfx.md)
 
 
 ## 4 License
